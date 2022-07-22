@@ -1,5 +1,7 @@
 FROM tomcat:9.0.59-jdk11-temurin-focal
-RUN apt update && apt install maven -y
+RUN sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.list && \
+    apt update && \
+    apt install maven -y
 
 WORKDIR /tmp
 COPY pom.xml /tmp/
