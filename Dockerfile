@@ -3,8 +3,10 @@ RUN apt update && apt install maven -y
 
 WORKDIR /tmp
 COPY pom.xml /tmp/
+RUN mvn verify clean --fail-never
+
 COPY src /tmp/src
-RUN mvn clean package
+RUN mvn package
 
 RUN mv target/spring4shell-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/spring4shell.war
 
