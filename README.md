@@ -1,5 +1,9 @@
 # Spring4Shell 攻撃体験キット
 
+## 必要なもの
+
+- Docker （Docker Compose）の動作環境
+
 ## 1. サーバーの起動
 
 ```
